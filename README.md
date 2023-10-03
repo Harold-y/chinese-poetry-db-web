@@ -21,7 +21,7 @@
 `
 
 ## 数据库设计
-<img src="./ERM.JPG" style="height:600px">
+<img src="./ERM.JPG" style="height:500px; width: 9000px">
 
 Poetry:
 - p_id: 诗词Id
