@@ -15,10 +15,11 @@
 - 纳兰性德
 
 ## 使用方法
-`
 1. Execute the chinese-poetry-collection_start.sql to generate a DB named "chinese-poetry-collection"
-2. Move the db_loader.py inside the main folder of <a href="https://github.com/chinese-poetry/chinese-poetry/tree/master#chinese-poetry-%E6%9C%80%E5%85%A8%E4%B8%AD%E6%96%87%E8%AF%97%E6%AD%8C%E5%8F%A4%E5%85%B8%E6%96%87%E9%9B%86%E6%95%B0%E6%8D%AE%E5%BA%93">chinese-poetry</a> repository
-`
+2. Move the db_loader.py inside the main folder of <a href="https://github.com/chinese-poetry/chinese-poetry/tree/master#chinese-poetry-%E6%9C%80%E5%85%A8%E4%B8%AD%E6%96%87%E8%AF%97%E6%AD%8C%E5%8F%A4%E5%85%B8%E6%96%87%E9%9B%86%E6%95%B0%E6%8D%AE%E5%BA%93">chinese-poetry</a> repository and execute the db_loader.py
+```
+xxx/chinese-poetry$user-1> python3 db_loader.py
+```
 
 ## 数据库设计
 <img src="./ERM.JPG" style="height:500px; width: 9000px">
