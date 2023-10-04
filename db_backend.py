@@ -198,3 +198,9 @@ def query_poem_by_collection(c_id: int, items_per_page: int = 100, curr_page: in
               f"WHERE c.c_id = {c_id} LIMIT {(curr_page - 1) * items_per_page}, {items_per_page}"
     res_s = db_select(query_s)
     return res_s[1]
+
+
+def query_random_poem() -> dict:
+    query_s = f"SELECT p.p_id FROM poetry as p ORDER BY RAND() LIMIT 1"
+    p_id = db_select(query_s)[1][0]["p_id"]
+    return query_poem_by_id(p_id)

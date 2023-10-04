@@ -94,5 +94,10 @@ def query_poem_by_collection_controller():
     return jsonify(query_poem_by_collection(c_id, items_per_page, curr_page))
 
 
+@app.route("/query/random_poem", methods=['GET'])
+def query_random_poem_controller():
+    return jsonify(query_random_poem())
+
+
 if __name__ == '__main__':
     app.run()
