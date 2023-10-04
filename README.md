@@ -17,7 +17,10 @@
 ## 使用方法
 1. 利用chinese-poetry-collection_start.sql导入到一个叫做"chinese-poetry-collection"的MySQL数据库
 2. 安装必要依赖：flask, opencc, pymysql
-3. 将db_loader.py放在<a href="https://github.com/chinese-poetry/chinese-poetry/tree/master#chinese-poetry-%E6%9C%80%E5%85%A8%E4%B8%AD%E6%96%87%E8%AF%97%E6%AD%8C%E5%8F%A4%E5%85%B8%E6%96%87%E9%9B%86%E6%95%B0%E6%8D%AE%E5%BA%93">chinese-poetry</a>仓库的主文件夹并且执行db_loader.py
+```
+xxx/chinese-poetry-db-web$user-1> pip3 install -r requirements.txt
+```
+4. 将db_loader.py放在<a href="https://github.com/chinese-poetry/chinese-poetry/tree/master#chinese-poetry-%E6%9C%80%E5%85%A8%E4%B8%AD%E6%96%87%E8%AF%97%E6%AD%8C%E5%8F%A4%E5%85%B8%E6%96%87%E9%9B%86%E6%95%B0%E6%8D%AE%E5%BA%93">chinese-poetry</a>仓库的主文件夹并且执行db_loader.py
 ```
 xxx/chinese-poetry$user-1> python3 db_loader.py
 ```
@@ -78,20 +81,20 @@ server.py，使用Flask制成，全部方法为GET
 #### 返回
 ```
 {
-"code": 0,
-"msg": "",
-"num_res": 59,
-"result": [
-    {
-      "a_id": 251,
-      "a_name": "張子容",
-      "p_id": 1389,
-      "p_paragraph": "林花發岸口，氣色動江新。\n此夜江中月，流光花上春。\n分明石潭裏，宜照浣紗人。",
-      "p_title": "相和歌辭 春江花月夜二首 一",
-      "r_id": null,
-      "r_name": null
-    }, ...
-]
+    "code": 0,
+    "msg": "",
+    "num_res": 59,
+    "result": [
+        {
+          "a_id": 251,
+          "a_name": "張子容",
+          "p_id": 1389,
+          "p_paragraph": "林花發岸口，氣色動江新。\n此夜江中月，流光花上春。\n分明石潭裏，宜照浣紗人。",
+          "p_title": "相和歌辭 春江花月夜二首 一",
+          "r_id": null,
+          "r_name": null
+        }, ...
+    ]
 }
 ```
 
@@ -108,17 +111,17 @@ server.py，使用Flask制成，全部方法为GET
 
 ```
 {
-"code": 0,
-"msg": "",
-"num_res": 2,
-"result": [
-    {
-    "a_id": 13628,
-    "a_name": "温庭筠",
-    "d_id": 4,
-    "d_name": "五代"
-    }, ...
-  ]
+    "code": 0,
+    "msg": "",
+    "num_res": 2,
+    "result": [
+        {
+            "a_id": 13628,
+            "a_name": "温庭筠",
+            "d_id": 4,
+            "d_name": "五代"
+        }, ...
+    ]
 }
 ```
 
@@ -134,17 +137,17 @@ server.py，使用Flask制成，全部方法为GET
 #### 返回
 ```
 {
-"code": 0,
-"msg": "",
-"num_res": 2,
-"result": [
-    {
-    "r_id": 362,
-    "r_img_path": null,
-    "r_name": "青玉案",
-    "r_note": ""
-    }, ...
-  ]
+    "code": 0,
+    "msg": "",
+    "num_res": 2,
+    "result": [
+        {
+            "r_id": 362,
+            "r_img_path": null,
+            "r_name": "青玉案",
+            "r_note": ""
+        }, ...
+    ]
 }
 ```
 
@@ -185,13 +188,13 @@ server.py，使用Flask制成，全部方法为GET
 ```
 [
   {
-  "a_id": 173,
-  "a_name": "溫庭筠",
-  "p_id": 1023,
-  "p_paragraph": "太子池南樓百尺，八窗新樹疎簾隔。\n黃金鋪首畫鉤陳，羽葆亭童拂交戟。\n盤紆闌楯臨高臺，帳殿臨流鸞扇開。\n早雁聲鳴細波起，映花鹵簿龍飛回。",
-  "p_title": "橫吹曲辭 雍臺歌",
-  "r_id": null,
-  "r_name": null
+      "a_id": 173,
+      "a_name": "溫庭筠",
+      "p_id": 1023,
+      "p_paragraph": "太子池南樓百尺，八窗新樹疎簾隔。\n黃金鋪首畫鉤陳，羽葆亭童拂交戟。\n盤紆闌楯臨高臺，帳殿臨流鸞扇開。\n早雁聲鳴細波起，映花鹵簿龍飛回。",
+      "p_title": "橫吹曲辭 雍臺歌",
+      "r_id": null,
+      "r_name": null
   }, ...
 ]
 ```
@@ -242,6 +245,30 @@ server.py，使用Flask制成，全部方法为GET
     "r_name": null
   }, ...
 ]
+```
+
+### /query/random_poem
+获取一个随机诗词
+
+#### 参数
+- 无
+
+#### 返回
+
+```
+{
+    "a_id": 4901,
+    "a_name": "楊萬里",
+    "c_name": "唐宋诗",
+    "d_name": "宋朝",
+    "p_id": 106261,
+    "p_img_path": null,
+    "p_note": null,
+    "p_paragraph": "天公也自喜良辰，上巳風光忽斬新。\n點檢一春好天色，更無兩日似今晨。",
+    "p_title": "三月三日上忠襄墳因之行散得十絕句  其四",
+    "r_id": null,
+    "r_name": null
+}
 ```
 
 ### /display/rhythmic
