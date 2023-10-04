@@ -23,7 +23,7 @@ def search_poem_controller():
 
 
 @app.route("/query/poem_by_id", methods=['GET'])
-def query_poem_by_id_controller(p_id: int):
+def query_poem_by_id_controller():
     args = dict(flask.request.args)
     p_id = int(args['p_id'])
 
