@@ -170,6 +170,7 @@ def load_song_ci(parent: str = "./宋词/"):
         for poem in list_res:
             a_id = load_author(d_id, poem['author'])
             paragraphs = poem['paragraphs']
+            title = poem['rhythmic']
             r_id = load_rhythmic(rhythmic_name=poem['rhythmic'])
             try:
                 if len(paragraphs) == 1 and paragraphs[0] == "。":
@@ -177,7 +178,7 @@ def load_song_ci(parent: str = "./宋词/"):
             except:
                 print("error when determine garbage")
 
-            load_poem(author_id=a_id, paragraph=paragraphs, rhythmic_id=r_id, collection_id=c_id)
+            load_poem(author_id=a_id, paragraph=paragraphs, rhythmic_id=r_id, collection_id=c_id, title=title)
 
 
 def load_shijing(parent: str = "./诗经/"):
