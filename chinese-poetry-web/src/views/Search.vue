@@ -12,11 +12,11 @@
     </div>
     <div style="max-width:70%; padding: 1rem; margin: auto; margin-top: 8%; margin-top: 4rem; max-width: 500px;">
         <img
-            src="DSC07440.jpg"
+            src="/DSC07440.jpg"
             style="max-width: 100%; height: auto; width: auto\9;"
         />
     </div>
-        
+         
 </template>
     
 <script>

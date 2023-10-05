@@ -29,7 +29,8 @@ def db_select(query_str: str) -> Tuple[int, List[dict]]:
     return res_num, data
 
 
-def search_poem(query_str: str = None, query_type: str = "title", items_per_page: int = 100, curr_page: int = 1) -> dict:
+def search_poem(query_str: str = None, query_type: str = "title", items_per_page: int = 100,
+                curr_page: int = 1) -> dict:
     res = {
         'num_res': 0,
         'result': [],
@@ -86,12 +87,12 @@ def search_poem(query_str: str = None, query_type: str = "title", items_per_page
 
 def query_poem_by_id(p_id: int) -> dict:
     query_s = f"SELECT p.p_id, p.p_title, a.a_id, a.a_name, d.d_name, r.r_id, r.r_name, c.c_name, p.p_paragraph, p.p_note, p.p_img_path " \
-                f"FROM poetry as p " \
-                f"LEFT JOIN author as a ON p.p_author_id = a.a_id " \
-                f"LEFT JOIN rhythmic as r ON p.p_rhythmic_id = r.r_id " \
-                f"LEFT JOIN dynasty as d ON a.a_dynasty_id = d.d_id " \
-                f"LEFT JOIN collection as c ON p.p_collection_id = c.c_id " \
-                f"WHERE p.p_id = {p_id}"
+              f"FROM poetry as p " \
+              f"LEFT JOIN author as a ON p.p_author_id = a.a_id " \
+              f"LEFT JOIN rhythmic as r ON p.p_rhythmic_id = r.r_id " \
+              f"LEFT JOIN dynasty as d ON a.a_dynasty_id = d.d_id " \
+              f"LEFT JOIN collection as c ON p.p_collection_id = c.c_id " \
+              f"WHERE p.p_id = {p_id}"
     res_s = db_select(query_s)
     return res_s[1][0]
 
@@ -136,6 +137,14 @@ def query_poem_by_author(a_id: int, items_per_page: int = 100, curr_page: int = 
     return res_s[1]
 
 
+def display_author(items_per_page: int = 100) -> List[dict]:
+    query_s = f"SELECT a.a_id, a.a_name, d.d_id, d.d_name " \
+              f"FROM author as a LEFT JOIN dynasty as d ON d.d_id = a.a_dynasty_id WHERE " \
+              f"ORDER BY RAND() LIMIT {items_per_page}"
+    res_s = db_select(query_s)
+    return res_s[1]
+
+
 def display_rhythmic(items_per_page: int = 100, curr_page: int = 1) -> List[dict]:
     query_s = f"SELECT r.r_id, r.r_name, r.r_note, r.r_img_path FROM rhythmic as r " \
               f"LIMIT {(curr_page - 1) * items_per_page}, {items_per_page}"
@@ -161,7 +170,7 @@ def search_rhythmic(r_name: str = None, items_per_page: int = 100, curr_page: in
     for chars in str_choice:
         query_s = f"SELECT r.r_id, r.r_name, r.r_note, r.r_img_path FROM rhythmic as r " \
                   f"WHERE r.r_name like '%{chars}%' " \
-              f"LIMIT {(curr_page - 1) * items_per_page}, {items_per_page}"
+                  f"LIMIT {(curr_page - 1) * items_per_page}, {items_per_page}"
         res_s = db_select(query_s)
         for item in res_s[1]:
             if item['r_id'] in added_ids:

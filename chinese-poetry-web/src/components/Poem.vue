@@ -1,6 +1,6 @@
 <template>
     
-        <n-card title="" size="large">
+        <n-card title="" size="large" v-if="this.ready_to_render">
                 <n-h2 style="float: left;">{{ poem_title }}</n-h2>
                 <n-button circle style="margin-left: 10px; margin-top: 5px; float:left" @click="trad_simp_conv">
                 繁简
@@ -20,7 +20,7 @@
 
                 <div style="max-width: 600px;">
                     <img
-                        src="DSC09460.jpg"
+                        src="/DSC09460.jpg"
                         style="max-width: 100%; height: auto; width: auto\9;"
                     />
                 </div>
@@ -127,30 +127,33 @@
                         });
             },
         }, mounted() {
-            if(this.use_poem_id === true) {
+            if(this.poem_id !== -1 && this.poem_id !== undefined) {
                     axios.get( this.BASE_URL + "/query/poem_by_id?p_id=" + this.poem_id)
                         .then((response) => {
                             this.poem_info_ = response.data
+                            this.ready_to_render = true
+                            this.clean_data()
                         })
                         .catch(function (error) {
                             console.log(error);
                         });
-                }
-            this.clean_data()
-                
+            }else {
+                this.ready_to_render = true
+                this.clean_data()
+            }
         }, data () {
             return {
                 poem_info_: this.poem_info,
                 poem_title: '',
                 has_rhythmic: false,
                 simplified: true,
+                ready_to_render: false,
             }
         }, setup() {
             return {
-                
+
             };
         }, props: {
-            use_poem_id: false,
             poem_info: {},
             poem_id: -1
         }

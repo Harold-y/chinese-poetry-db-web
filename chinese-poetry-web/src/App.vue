@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import { NLayout, NLayoutHeader, NLayoutContent, NDivider, NMessageProvider } from 'naive-ui';
+import { NLayout, NLayoutHeader, NLayoutContent, NDivider, NMessageProvider, NBackTop } from 'naive-ui';
 </script>
 
 <template>
@@ -14,6 +14,7 @@ import { NLayout, NLayoutHeader, NLayoutContent, NDivider, NMessageProvider } fr
       </n-layout-content>
   </n-layout>
 </n-message-provider>
+<n-back-top :right="50" />
 </template>
 
 <style scoped>
