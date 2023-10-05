@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="559f5fa4-0810-494b-974c-c607978ca373" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/components/Poem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/components/Poem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/views/Author.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/views/Author.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/views/PoemSearchList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/views/PoemSearchList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/views/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/views/Search.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/views/Rhythmic.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/views/Rhythmic.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_backend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +135,7 @@
       <workItem from="1696377194363" duration="10105000" />
       <workItem from="1696431792909" duration="3139000" />
       <workItem from="1696530859864" duration="37000" />
-      <workItem from="1696530898591" duration="1564000" />
+      <workItem from="1696530898591" duration="3128000" />
     </task>
     <servers />
   </component>
@@ -159,7 +156,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chinese_poetry_db_web$server.coverage" NAME="server Coverage Results" MODIFIED="1696432183920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/chinese_poetry_db_web$chinese_poetry_db_web.coverage" NAME="chinese-poetry-db-web Coverage Results" MODIFIED="1696544163297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/chinese_poetry_db_web$chinese_poetry_db_web.coverage" NAME="chinese-poetry-db-web Coverage Results" MODIFIED="1696548285873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/chinese_poetry_db_web$db_backend.coverage" NAME="db_backend Coverage Results" MODIFIED="1696380057401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

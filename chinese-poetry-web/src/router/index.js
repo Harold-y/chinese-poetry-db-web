@@ -6,6 +6,7 @@ import Rhythmic from '../views/Rhythmic.vue'
 import Search from '../views/Search.vue'
 import PoemSearchList from '../views/PoemSearchList.vue'
 import Poem from '../components/Poem.vue'
+import PoemSearchByOther from '../views/PoemSearchByOther.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,12 @@ const router = createRouter({
       path: '/search_poem_list/:query_method/:query_text',
       name: 'searchPoemList',
       component: PoemSearchList,
+      props: true
+    },
+    {
+      path: '/search_poem_other_list/:query_method/:query_text',
+      name: 'PoemSearchByOther',
+      component: PoemSearchByOther,
       props: true
     },
     {

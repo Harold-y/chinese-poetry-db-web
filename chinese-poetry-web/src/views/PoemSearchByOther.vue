@@ -89,10 +89,10 @@
                 if (this.curr_page > 1) {
                     this.curr_page -= 1
                     this.next_disabled = false
-                    axios.get( this.BASE_URL + "/search/poem?query_type=" + this.query_method + "&query_str=" + this.query_text + "&items_per_page=" + this.items_per_pag + "&curr_page=" + this.curr_page)
+                    axios.get(this.query_link)
                         .then((response) => {
-                            this.poem_list = response.data.result
-                            this.poem_list_length = response.data.num_res
+                            this.poem_list = response.data
+                            this.poem_list_length = response.data.length
                             for (var i = 0; i < this.poem_list_length; i ++)
                             {
                                 this.clean_data(this.poem_list[i])
@@ -113,10 +113,10 @@
             },
             next_page: function() {
                 this.curr_page += 1
-                axios.get( this.BASE_URL + "/search/poem?query_type=" + this.query_method + "&query_str=" + this.query_text + "&items_per_page=" + this.items_per_pag + "&curr_page=" + this.curr_page)
+                axios.get(this.query_link)
                         .then((response) => {
-                            this.poem_list = response.data.result
-                            this.poem_list_length = response.data.num_res
+                            this.poem_list = response.data
+                            this.poem_list_length = response.data.length
                             for (var i = 0; i < this.poem_list_length; i ++)
                             {
                                 this.clean_data(this.poem_list[i])
@@ -138,32 +138,32 @@
                 window.scrollTo(0, 0);
             }
         }, mounted() {
-            axios.get( this.BASE_URL + "/search/poem?query_type=" + this.query_method + "&query_str=" + this.query_text + "&items_per_page=" + this.items_per_pag + "&curr_page=" + this.curr_page)
-                        .then((response) => {
-                            this.poem_list = response.data.result
-                            this.poem_list_length = response.data.num_res
-                            for (var i = 0; i < this.poem_list_length; i ++)
-                            {
-                                this.clean_data(this.poem_list[i])
-                            }
-                            if (this.poem_list_length < this.items_per_pag) {
-                                this.next_disabled = true
-                            }
-                            this.loaded = true
-                        })
-                        .catch(function (error) {
-                            console.log(error);
-                        });
-            if (this.query_method === 'title') {
-                this.query_text_han = '标题'
+            if (this.query_method === 'collection') {
+                this.query_text_han = '诗集'
+                this.query_link += '/query/poem_by_collection?c_id=' + this.query_text + '&items_per_page=' + this.items_per_pag + "&curr_page=" + this.curr_page
             }else if (this.query_method === 'author') {
                 this.query_text_han = '作者'
-            }else if (this.query_method === 'para') {
-                this.query_text_han = '正文'
+                this.query_link += '/query/poem_by_author?a_id=' + this.query_text + '&items_per_page=' + this.items_per_pag + "&curr_page=" + this.curr_page
             }else if (this.query_method === 'rhy') {
                 this.query_text_han = '词牌/韵律'
+                this.query_link += '/query/poem_by_rhythmic?r_id=' + this.query_text + '&items_per_page=' + this.items_per_pag + "&curr_page=" + this.curr_page
             }
-            
+            axios.get(this.query_link)
+                .then((response) => {
+                    this.poem_list = response.data
+                    this.poem_list_length = response.data.length
+                    for (var i = 0; i < this.poem_list_length; i ++)
+                    {
+                        this.clean_data(this.poem_list[i])
+                    }
+                    if (this.poem_list_length < this.items_per_pag) {
+                        this.next_disabled = true
+                    }
+                    this.loaded = true
+                })
+                .catch(function (error) {
+                    console.log(error);
+            });
         }, data () {
             return {
                 items_per_pag: 50,
@@ -174,6 +174,7 @@
                 query_text_han: '',
                 prev_disabled: true,
                 next_disabled: false,
+                query_link: this.BASE_URL,
             }
         }, setup() {
             return {

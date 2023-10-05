@@ -71,9 +71,8 @@ def display_author_controller():
 def display_rhythmic_controller():
     args = dict(flask.request.args)
     items_per_page = int(args.get('items_per_page', 100))
-    curr_page = int(args.get('curr_page', 1))
 
-    return jsonify(display_rhythmic(items_per_page, curr_page))
+    return jsonify(display_rhythmic(items_per_page))
 
 
 @app.route("/search/rhythmic", methods=['GET'])

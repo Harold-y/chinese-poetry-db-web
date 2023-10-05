@@ -145,9 +145,9 @@ def display_author(items_per_page: int = 100) -> List[dict]:
     return res_s[1]
 
 
-def display_rhythmic(items_per_page: int = 100, curr_page: int = 1) -> List[dict]:
+def display_rhythmic(items_per_page: int = 100) -> List[dict]:
     query_s = f"SELECT r.r_id, r.r_name, r.r_note, r.r_img_path FROM rhythmic as r " \
-              f"LIMIT {(curr_page - 1) * items_per_page}, {items_per_page}"
+              f"ORDER BY RAND() LIMIT {items_per_page}"
     res_s = db_select(query_s)
     return res_s[1]
 
