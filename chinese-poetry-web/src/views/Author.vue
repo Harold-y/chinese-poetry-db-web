@@ -1,5 +1,5 @@
 <template>
-    <n-table :bordered="false" :single-line="false">
+    <n-table :bordered="false" :single-line="false" v-if="this.ready_render">
         <thead>
         <tr>
             <th>姓名</th>
@@ -30,24 +30,17 @@
         methods: {
 
         }, mounted() {
-            axios.get( this.BASE_URL + "/search/poem?query_type=" + this.query_method + "&query_str=" + this.query_text + "&items_per_page=" + this.items_per_pag + "&curr_page=" + this.curr_page)
+            axios.get( this.BASE_URL + "/display/author?" + "items_per_page=" + this.items_per_pag)
                 .then((response) => {
-                    this.poem_list = response.data.result
-                    this.poem_list_length = response.data.num_res
-                    for (var i = 0; i < this.poem_list_length; i ++)
-                    {
-                        this.clean_data(this.poem_list[i])
-                    }
-                    if (this.poem_list_length < this.items_per_pag) {
-                        this.next_disabled = true
-                    }
-                    this.loaded = true
+                    this.authors = response.data.result
+                    this.ready_render = true
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
         }, data () {
             return {
+                items_per_pag: 50,
                 ready_render: false,
                 authors: [],            
             }

@@ -139,7 +139,7 @@ def query_poem_by_author(a_id: int, items_per_page: int = 100, curr_page: int = 
 
 def display_author(items_per_page: int = 100) -> List[dict]:
     query_s = f"SELECT a.a_id, a.a_name, d.d_id, d.d_name " \
-              f"FROM author as a LEFT JOIN dynasty as d ON d.d_id = a.a_dynasty_id WHERE " \
+              f"FROM author as a LEFT JOIN dynasty as d ON d.d_id = a.a_dynasty_id " \
               f"ORDER BY RAND() LIMIT {items_per_page}"
     res_s = db_select(query_s)
     return res_s[1]
