@@ -14,6 +14,9 @@
 - 论语
 - 纳兰性德
 
+
+
+
 ## 使用方法
 1. 利用chinese-poetry-collection_start.sql导入到一个叫做"chinese-poetry-collection"的MySQL数据库
 2. 安装必要依赖：flask, opencc, pymysql
@@ -28,6 +31,12 @@ xxx/chinese-poetry$user-1> python3 db_loader.py
 ```
 xxx/chinese-poetry-db-web$user-1> python3 server.py
 ```
+4. 在本仓库下面的"chinese-poetry-web"进行：前端（node），启动！
+```
+xxx/chinese-poetry-db-web/chinese-poetry-web$user-1> npm install
+xxx/chinese-poetry-db-web/chinese-poetry-web$user-1> npm run dev
+```
+5. （可选）前端打包部署
 
 ## 数据库设计
 使用MySQL
@@ -333,3 +342,12 @@ server.py，使用Flask制成，全部方法为GET
   }, ...
 ]
 ```
+
+## 前端
+Vue 3 + Naive UI
+
+## 截图
+
+![image](https://github.com/Harold-y/chinese-poetry-db-web/assets/68500948/e19c6d67-4661-4cfd-b253-a5aa8476c161)
+![image](https://github.com/Harold-y/chinese-poetry-db-web/assets/68500948/8524b638-5298-4654-b53a-9ab7aad5958a)
+![image](https://github.com/Harold-y/chinese-poetry-db-web/assets/68500948/7567c588-2427-44b7-8e6c-b47f6dfb32ca)
