@@ -1,6 +1,6 @@
 <template>
     <div v-for="collection in collections" :key="collection.c_id">
-        <n-card title="" style="padding: 1rem; margin: 1rem;" @click="() => {this.view_collection_poems(collection.c_id)}">
+        <n-card title="" style="padding: 1rem; margin-top: 1rem;" @click="() => {this.view_collection_poems(collection.c_id)}">
                 <n-h2>{{ collection.c_name }}</n-h2>
                 <n-p>{{ collection.c_note }}</n-p>
         </n-card>        
