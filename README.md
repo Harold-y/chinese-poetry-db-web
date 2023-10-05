@@ -75,7 +75,7 @@ server.py，使用Flask制成，全部方法为GET
 #### 参数
 - query_str：查询字符串
 - query_type：查询模式，必须为"title"（标题查询）, "para"（正文查询）, "rhy"（词牌/韵律查询）, 或"author"（作者查询）其中一种
-- items_per_pag：每页查询个数
+- items_per_page：每页查询个数
 - curr_page：目前页数（从1开始）
 
 #### 返回
@@ -104,7 +104,7 @@ server.py，使用Flask制成，全部方法为GET
 
 #### 参数
 - query_str：查询字符串
-- items_per_pag：每页查询个数
+- items_per_page：每页查询个数
 - curr_page：目前页数（从1开始）
 
 #### 返回
@@ -131,7 +131,7 @@ server.py，使用Flask制成，全部方法为GET
 
 #### 参数
 - r_name：查询字符串
-- items_per_pag：每页查询个数
+- items_per_page：每页查询个数
 - curr_page：目前页数（从1开始）
 
 #### 返回
@@ -180,7 +180,7 @@ server.py，使用Flask制成，全部方法为GET
 
 #### 参数
 - a_id：author的Id
-- items_per_pag：每页查询个数
+- items_per_page：每页查询个数
 - curr_page：目前页数（从1开始）
 
 #### 返回
@@ -204,7 +204,7 @@ server.py，使用Flask制成，全部方法为GET
 
 #### 参数
 - r_id：rhythmic的Id
-- items_per_pag：每页查询个数
+- items_per_page：每页查询个数
 - curr_page：目前页数（从1开始）
 
 #### 返回
@@ -228,7 +228,7 @@ server.py，使用Flask制成，全部方法为GET
 
 #### 参数
 - c_id：collection的Id
-- items_per_pag：每页查询个数
+- items_per_page：每页查询个数
 - curr_page：目前页数（从1开始）
 
 #### 返回
@@ -271,11 +271,30 @@ server.py，使用Flask制成，全部方法为GET
 }
 ```
 
+### /display/author
+获取随机作者
+
+#### 参数
+- items_per_page：随机获取个数
+
+#### 返回
+
+```
+[
+    {
+        "a_id": 13628,
+        "a_name": "温庭筠",
+        "d_id": 4,
+        "d_name": "五代"
+    }, ...
+]
+```
+
 ### /display/rhythmic
 获取rhythmic 列表
 
 #### 参数
-- items_per_pag：每页查询个数
+- items_per_page：每页查询个数
 - curr_page：目前页数（从1开始）
 
 #### 返回
