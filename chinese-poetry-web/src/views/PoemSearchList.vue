@@ -5,7 +5,7 @@
 
     <div>
         <n-grid
-        :cols="5"
+        :cols="n_col"
         :collapsed="gridCollapsed"
         :collapsed-rows="gridCollapsedRows"
         :x-gap="30" :y-gap="20"
@@ -149,6 +149,10 @@
                             if (this.poem_list_length < this.items_per_pag) {
                                 this.next_disabled = true
                             }
+                            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                                this.is_mobile =  true
+                                this.n_col = 1
+                            }
                             this.loaded = true
                         })
                         .catch(function (error) {
@@ -174,6 +178,8 @@
                 query_text_han: '',
                 prev_disabled: true,
                 next_disabled: false,
+                is_mobile: false,
+                n_col: 5,
             }
         }, setup() {
             return {
