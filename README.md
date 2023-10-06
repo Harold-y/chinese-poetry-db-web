@@ -18,14 +18,10 @@
 
 
 ## 使用方法
-1. 利用chinese-poetry-collection_start.sql导入到一个叫做"chinese-poetry-collection"的MySQL数据库
+1. 利用chinese-poetry-collection8.zip解压后的利用chinese-poetry-collection8.sql导入到一个叫做"chinese-poetry-collection"的MySQL数据库
 2. 安装必要依赖：flask, opencc, pymysql
 ```
 xxx/chinese-poetry-db-web$user-1> pip3 install -r requirements.txt
-```
-4. 将db_loader.py放在<a href="https://github.com/chinese-poetry/chinese-poetry/tree/master#chinese-poetry-%E6%9C%80%E5%85%A8%E4%B8%AD%E6%96%87%E8%AF%97%E6%AD%8C%E5%8F%A4%E5%85%B8%E6%96%87%E9%9B%86%E6%95%B0%E6%8D%AE%E5%BA%93">chinese-poetry</a>仓库的主文件夹并且执行db_loader.py
-```
-xxx/chinese-poetry$user-1> python3 db_loader.py
 ```
 3. 在本仓库进行：后端（flask），启动！
 ```
