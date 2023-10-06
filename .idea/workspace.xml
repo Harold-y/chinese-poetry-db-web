@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="559f5fa4-0810-494b-974c-c607978ca373" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/views/Author.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/views/Author.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/views/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/views/Collection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/views/PoemSearchList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/views/PoemSearchList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/src/views/Rhythmic.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/src/views/Rhythmic.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_backend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chinese-poetry-web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chinese-poetry-web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +131,7 @@
       <workItem from="1696377194363" duration="10105000" />
       <workItem from="1696431792909" duration="3139000" />
       <workItem from="1696530859864" duration="37000" />
-      <workItem from="1696530898591" duration="3742000" />
+      <workItem from="1696530898591" duration="4784000" />
     </task>
     <servers />
   </component>
